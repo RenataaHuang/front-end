@@ -5,6 +5,7 @@
     目标：使得 JavaScript 语言可以用来编写大型的复杂的应用程序，成为企业级开发语言。
     ECMAScript 是 JavaScript 语言的国际标准，JavaScript 是 ECMAScript 的实现。
 ####  1.1、Symbol
+        - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15` 
         这是新增的一种原始数据类型，ES5 中原始类型有 5 种，在 ES6 中新引入了一种后，
         现在就是有 6 种原始数据类型了：Number、String、Boolean、null、undefined、Symbol
 
