@@ -37,6 +37,8 @@
         属性width,height，只包含内容content，不包含border和padding（在content里？）。
 
 ### 6、什么是闭包
+  有权访问另一个函数作用域中变量的函数
+  创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。
 #### 6.1、背景
    Javascript语言的特殊之处：</br>
      1、函数内部可以直接读取全局变量。
@@ -219,13 +221,94 @@
 
 ## 二、育儿网（仅笔试题）
 ### 1、css3有哪些实用的选择器
-   选择器：每一条css样式定义由两部分组成，形式如下： [code] 选择器{样式} [/code] 在{}之前的部分就是“选择器”。 “选择器”指明了{}中的“样式”的作用对象，也就是“样式”作用于网页中的哪些元素
+   选择器：每一条css样式定义由两部分组成，形式如下： [code] 选择器{样式} [/code] 在{}之前的部分就是“选择器”。 “选择器”指明了{}中的“样式”的作用对象，也就是“样式”作用于网页中的哪些元素</br>
+   `1.id选择器（ # myid）`</br>
+   `2.类选择器（.myclassname）`</br>
+   `3.标签选择器（div, h1, p）`</br>
+   `4.相邻选择器（h1 + p）`</br>
+   `5.子选择器（ul > li）`</br>
+   `6.后代选择器（li a）`</br>
+   `7.通配符选择器（ * ）`</br>
+   `8.属性选择器（a[rel = "external"]）`</br>
+   `9.伪类选择器（a:hover, li:nth-child）`</br>
 
 ### 2、css sprites是什么，用来干什么的，在移动端和web端有什么区别
     
 ### 3、typeof返回值类型
+    number, boolean, string, undefined, object, function, symbol(ES6提供的新特性).
+
 ### 4、DOM事件响应过程
-### 5、水平垂直居中的实现方法，如何让一个绝对定位的div实现水平垂直居中
+    事件捕获阶段
+    处于目标阶段
+    事件冒泡阶段
+    
+### 5、水平居中的实现方法，如何让一个绝对定位的div实现水平垂直居中
+  1、水平居中：给div设置一个宽度，然后添加margin:0 auto属性
+```js
+div{
+ 	width:200px;
+ 	margin:0 auto;
+  }
+```
+  2、让绝对定位的div居中
+```js
+div {
+ 	position: absolute;
+ 	width: 300px;
+ 	height: 300px;
+ 	margin: auto;
+ 	top: 0;
+ 	left: 0;
+ 	bottom: 0;
+ 	right: 0;
+ 	background-color: pink;	/* 方便看效果 */
+ }
+```
+  3、水平垂直居中一
+```js
+//确定容器的宽高 宽500 高 300 的层
+//设置层的外边距
+ div {
+ 	position: relative;		/* 相对定位或绝对定位均可 */
+ 	width:500px;
+ 	height:300px;
+ 	top: 50%;
+ 	left: 50%;
+ 	margin: -150px 0 0 -250px;     	/* 外边距为自身宽高的一半 */
+ 	background-color: pink;	 	/* 方便看效果 */
+
+  }
+```
+  4、水平垂直居中二
+```js
+//未知容器的宽高，利用 `transform` 属性
+ div {
+ 	position: absolute;		/* 相对定位或绝对定位均可 */
+ 	width:500px;
+ 	height:300px;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+ 	background-color: pink;	 	/* 方便看效果 */
+ }
+```
+  5、水平垂直居中三
+```js
+//利用 flex 布局
+//实际使用时应考虑兼容性
+ .container {
+ 	display: flex;
+ 	align-items: center; 		/* 垂直居中 */
+ 	justify-content: center;	/* 水平居中 */
+
+ }
+ .container div {
+ 	width: 100px;
+ 	height: 100px;
+ 	background-color: pink;		/* 方便看效果 */
+ }  
+```
+   
 ### 6、为什么会出现浮动，如何消除浮动
 ### 7、display:inlineblock为什么会有间隙，如何消除间隙
 ### 8、移动端点击网页为什么会有延迟，延迟多久，如何消除延迟
