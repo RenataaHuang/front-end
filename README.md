@@ -82,7 +82,7 @@
 #### 6.2、闭包的用途
     1、读取函数内部的变量；2、让这些变量的值始终保持在内存中。
     
-[上述闭包有关信息来源](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html"阮一峰的日志")
+[上述闭包有关信息来源](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
     
     
 ### 7、什么是指针
